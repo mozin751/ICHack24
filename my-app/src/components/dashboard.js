@@ -19,7 +19,7 @@ const Dashboard = () => {
       id: "0101104",
       name: "Thalaiyur Mohammad Rayees Muhamad Mohsin",
       lessonsCompleted: 3,
-      testsCompleted: 2,
+      testsCompleted: 5,
     },
   ];
 
