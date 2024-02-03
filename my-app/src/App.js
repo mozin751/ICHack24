@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
+  const [page, setPage] = useState("home"); // Added to manage page state
   const students = [
     {
       id: "0101102",
@@ -30,6 +31,15 @@ function App() {
     },
   ];
 
+  if (page === "newLesson") {
+    return (
+      <div className="App">
+        <h1>New Lesson</h1>
+        <button onClick={() => setPage("home")}>Back to Home</button>
+      </div>
+    );
+  }
+
   return (
     <div className="App">
       <table>
@@ -56,6 +66,9 @@ function App() {
           ))}
         </tbody>
       </table>
+      <button className="createLessonBtn" onClick={() => setPage("newLesson")}>
+        Create Lesson
+      </button>
     </div>
   );
 }
