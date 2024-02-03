@@ -1,4 +1,5 @@
 import {React,useState } from "react";
+import NewLesson from "./new_lesson";
 const Dashboard = () => {
     const [page, setPage] = useState("home"); // Added to manage page state
     const students = [
@@ -29,12 +30,7 @@ const Dashboard = () => {
     ];
   
     if (page === "newLesson") {
-      return (
-        <div className="App">
-          <h1>New Lesson</h1>
-          <button onClick={() => setPage("home")}>Back to Home</button>
-        </div>
-      );
+      return <NewLesson setPage = {setPage} />;
     }
   
     return (
@@ -58,7 +54,7 @@ const Dashboard = () => {
                 <td>{student.lessonsCompleted}</td>
                 <td>{student.testsCompleted}</td>
                 <td>{student.testsMissed}</td>
-                <td>{student.averageMark}</td>
+                <td>{student.averageMark}</td>w
               </tr>
             ))}
           </tbody>
