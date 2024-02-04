@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
+import NewLesson from "./new_lesson";
 
 const Dashboard = () => {
+  const [page, setPage] = useState("home");
   const [students, setStudents] = useState([]);
+  
   var cnt = 1;
   useEffect(() => {
     fetch('http://146.169.140.182/all_students/')
@@ -13,6 +16,11 @@ const Dashboard = () => {
         setStudents(data.students);
       });
   }, []);
+
+  if (page === "newLesson") {
+    return <NewLesson setPage={setPage} />;
+  }
+
   return (
 <div className="App">
       <table>
@@ -35,6 +43,9 @@ const Dashboard = () => {
           ))}
         </tbody>
       </table>
+      <button className="createLessonBtn" onClick={() => setPage("newLesson")}>
+        Create Lesson
+      </button>
     </div>
   );
 };

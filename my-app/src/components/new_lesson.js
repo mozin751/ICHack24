@@ -5,39 +5,47 @@ function NewLesson({ setPage }) {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
 
-  const [optionSelected, setOptionSelected] = useState("");
+  const [isChecked, setChecked] = useState(false);
 
-  const handleCheckboxChange = (value) => {
-    setOptionSelected(value);
+  // Function to handle checkbox change
+  const handleCheckboxChange = () => {
+    setChecked(!isChecked);
   };
 
-  const openai = new OpenAI({
-    apiKey: "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",
-    dangerouslyAllowBrowser: true,
-  });
+  const openai = new OpenAI({ apiKey: "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", dangerouslyAllowBrowser: true });
 
   async function Helper(c) {
     try {
-      let prompt =
-        "I have access to FPGA boards which my students can use to represent binary numbers using switches on the FPGA. Using the FPGA, in under 100 words create a lesson plan with this title: " +
-        c +
-        "\n Do not reiterate the name of the title to me again.";
+
+      var data = "";
+      var prompt = "";
+
+      if (isChecked) {
+        prompt += "I have access to FPGA boards which my students can use to represent binary numbers using switches on the FPGA. Using the FPGA,"
+      }
+
+      else {
+        prompt += " in under 100 words create a homework I can give to my students with this title: " + c + "\n. Do not reiterate the name of the title to me again."
+      }
+
+
       const stream = await openai.chat.completions.create({
         model: "gpt-3.5-turbo",
         messages: [{ role: "user", content: prompt }],
         stream: true,
       });
 
-      let data = "";
       for await (const chunk of stream) {
         data += chunk.choices[0]?.delta?.content || "";
       }
       console.log("Data is:" + data);
       return data;
-    } catch {
+    }
+    catch {
       console.log("Error");
     }
   }
+
 
   // async function main(c) {
   //   const stream = await openai.chat.completions.create({
@@ -55,19 +63,20 @@ function NewLesson({ setPage }) {
   async function main(c) {
     try {
       const result = await Helper(c);
-      return result;
+      return result
       // Further processing with the result
     } catch (error) {
       console.error("Error:", error);
     }
   }
 
+
   async function generatePrompt() {
     // Call the main function with the title and update the body
-    setBody("Generating...");
+    setBody("Generating...")
     const result = await main(title);
     setBody(result);
-  }
+  };
 
   const handleSubmit = () => {
     const lessonData = { title, body };
@@ -75,13 +84,9 @@ function NewLesson({ setPage }) {
       type: "application/json",
     });
     const href = URL.createObjectURL(blob);
-
-    // Replace spaces with underscores in the title for the filename
-    const fileName = `${title.replace(/ /g, "_")}.json`;
-
     const link = document.createElement("a");
     link.href = href;
-    link.download = fileName; // Use the modified title as the file name
+    link.download = "lesson.json"; // This will suggest saving the file as "lesson.json"
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -110,6 +115,18 @@ function NewLesson({ setPage }) {
         ></textarea>
       </div>
       <div className="button-group">
+        <div className="checkbox-container">
+          <label htmlFor="fpga_check" className="checkbox-label">
+            <input
+              id="fpga_check"
+              type="checkbox"
+              checked={isChecked}
+              onChange={handleCheckboxChange}
+            />
+            "                   FPGA Assignment
+            <span className="checkmark"></span>
+          </label>
+        </div>
         <button onClick={() => setPage("home")}>Back to Home</button>
         <button onClick={generatePrompt}>Generate a Lesson!</button>
         <button onClick={handleSubmit}>Submit Lesson</button>
@@ -135,12 +152,14 @@ function NewLesson({ setPage }) {
           padding: 8px;
           border: 1px solid #ccc;
           border-radius: 4px;
+          margin-bottom: 10px;
         }
         .textarea-input {
           height: 150px;
         }
         .button-group button {
-          padding: 10px 20px;
+          margin-top:30px;
+          padding: 10px 37px;
           font-size: 16px;
           color: white;
           background-color: #007bff;
@@ -152,6 +171,53 @@ function NewLesson({ setPage }) {
         .button-group button:hover {
           background-color: #0056b3;
         }
+        .checkbox-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5vh; /* Optionally, adjust the height as needed */
+}
+
+.checkbox-label {
+  position: relative;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+/* Hide default checkbox */
+.checkbox-label input {
+  opacity: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: #fff;
+  border: 2px solid #007bff; /* Change to your preferred color */
+  border-radius: 3px;
+}
+
+/* Checked state style */
+.checkbox-label input:checked + .checkmark:after {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 4px;
+  border: solid #007bff; /* Change to your preferred color */
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
       `}</style>
     </div>
   );
