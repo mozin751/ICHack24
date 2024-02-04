@@ -2,6 +2,7 @@ from fastapi import FastAPI, UploadFile
 import shutil
 import os
 import csv
+import json
 
 app = FastAPI()
 
@@ -15,7 +16,14 @@ async def index():
 
 @app.get("/all_lessons/")
 async def all_lessons():
-    return {"lessons_list": os.listdir(os.getcwd() + "/Data/Lessons/")}
+    titles_list = list()
+    for lesson_file in os.listdir(os.getcwd() + "/Data/Lessons/"):
+        with open(os.getcwd() + "/Data/Lessons/" + lesson_file) as f:
+            data = json.load(f)
+
+            titles_list.append(data["title"])
+    
+    return titles_list
 
 @app.get("/authenticate/")
 async def authenticate(name: str):
