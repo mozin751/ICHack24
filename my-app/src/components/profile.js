@@ -12,8 +12,8 @@ function Profile() {
                             </div>
                         </div>
                         <div class="content__actions"><a href="./new_lesson">
-                            <span>Create New Lesson</span></a><a href="./new_lesson">
-                                <span>Message</span></a>
+                            <span></span></a><a href="./new_lesson">
+                                <span></span></a>
                                 </div>
                         <div class="content__title">
                             <h1>Rohan Shah</h1><span>London, United Kingdom</span>
