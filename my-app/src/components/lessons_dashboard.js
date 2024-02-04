@@ -1,19 +1,19 @@
 import { useState, useEffect } from 'react';
 import NewLesson from "./new_lesson";
 
-const Dashboard = () => {
+const LessonsDashboard = () => {
   const [page, setPage] = useState("home");
-  const [students, setStudents] = useState([]);
+  const [lessons, setLessons] = useState([]);
   
   var cnt = 1;
   useEffect(() => {
-    fetch('http://146.169.140.182/all_students/')
+    fetch('http://146.169.140.182/all_lessons/')
       .then((res) => {
         return res.json();
       })
       .then((data) => {
-        console.log(data.students);
-        setStudents(data.students);
+        console.log(data.Lessons);
+        setLessons(data.Lessons);
       });
   }, []);
 
@@ -26,24 +26,23 @@ const Dashboard = () => {
       <table>
         <thead>
           <tr>
-            <th>Student ID Number</th>
-            <th>Student Name</th>
-            <th>Lessons Completed</th>
-            <th>Tests Completed</th>
+            <th>Lesson ID</th>
+            <th>Lesson Name</th>
           </tr>
         </thead>
         <tbody>
-          {students.map((student) => (
-            <tr key={student}>
+          {lessons.map((lesson) => (
+            <tr key={lesson}>
               <td> {cnt++}</td>
-              <td>{student[0]}</td>
-              <td>{student[1]}</td>
-              <td>{student[2]}</td>
+              <td>{lesson}</td>
             </tr>
           ))}
         </tbody>
       </table>
+      <button className="createLessonBtn" onClick={() => setPage("newLesson")}>
+        Create Lesson
+      </button>
     </div>
   );
 };
-export default Dashboard;
+export default LessonsDashboard;
