@@ -1,8 +1,70 @@
 import React, { useState } from "react";
+import OpenAI from "openai";
 
 function NewLesson({ setPage }) {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
+
+  const [optionSelected, setOptionSelected] = useState("");
+
+  const handleCheckboxChange = (value) => {
+    setOptionSelected(value);
+  };
+
+  const openai = new OpenAI({apiKey : "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", dangerouslyAllowBrowser: true});
+
+  async function Helper(c) {
+    try {
+      let prompt = "I have access to FPGA boards which my students can use to represent binary numbers using switches on the FPGA. Using the FPGA, in under 100 words create a lesson plan with this title: " + c +"\n Do not reiterate the name of the title to me again."
+      const stream = await openai.chat.completions.create({
+        model: "gpt-3.5-turbo",
+        messages: [{ role: "user", content: prompt }],
+        stream: true,
+      });
+
+      let data = "";
+      for await (const chunk of stream) {
+        data += chunk.choices[0]?.delta?.content || "";
+      }
+      console.log("Data is:" + data);
+      return data;
+    }
+    catch {
+      console.log("Error");
+    }
+}
+
+
+  // async function main(c) {
+  //   const stream = await openai.chat.completions.create({
+  //     model: "gpt-3.5-turbo",
+  //     messages: [{ role: "user", content: c}],
+  //     stream: true,
+  //   });
+  //   let data = "";
+  //   for await (const chunk of stream) {
+  //     data += chunk.choices[0]?.delta?.content || ""
+  //   }
+  //   return data;
+  // }
+
+  async function main(c) {
+  try {
+    const result = await Helper(c);
+    return result
+    // Further processing with the result
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+
+  async function generatePrompt() {
+    // Call the main function with the title and update the body
+    setBody("Generating...")
+    const result = await main(title);
+    setBody(result);
+  };
 
   const handleSubmit = () => {
     const lessonData = { title, body };
@@ -42,6 +104,7 @@ function NewLesson({ setPage }) {
       </div>
       <div className="button-group">
         <button onClick={() => setPage("home")}>Back to Home</button>
+        <button onClick={generatePrompt}>Generate a Lesson!</button>
         <button onClick={handleSubmit}>Submit Lesson</button>
       </div>
       <style jsx>{`
