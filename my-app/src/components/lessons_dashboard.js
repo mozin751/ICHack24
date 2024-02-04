@@ -23,6 +23,7 @@ const LessonsDashboard = () => {
 
   return (
 <div className="App">
+      <h2>Lessons Dashboard</h2>
       <table>
         <thead>
           <tr>

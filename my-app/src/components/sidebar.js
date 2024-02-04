@@ -28,10 +28,10 @@ const Sidebar = ({ children }) => {
     <div className="container">
       <div style={{ width: isOpen ? "200px" : "50px" }} className="sidebar">
         <div className="top_section">
-          <h1 style={{ display: isOpen ? "none" : "none" }} className="logo">
+          <h1 style={{ display: isOpen ? "block" : "none" }} className="logo">
             DigiLearn
           </h1>
-          <div style={{ marginLeft: isOpen ? "100px" : "0px" }} className="bars">
+          <div style={{ marginLeft: isOpen ? "15px" : "0px" }} className="bars">
             <FaBars onClick={toggle} />
           </div>
         </div>
@@ -42,7 +42,6 @@ const Sidebar = ({ children }) => {
             className="link"
             activeClassName="active">
             <div className="icon">{item.icon}</div>
-            <div className="link_text">{item.name}</div>
           </NavLink>
         ))}
       </div>

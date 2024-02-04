@@ -23,6 +23,7 @@ const Dashboard = () => {
 
   return (
 <div className="App">
+  <h2>Students Dashboard</h2>
       <table>
         <thead>
           <tr>
