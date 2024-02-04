@@ -7,18 +7,162 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4208085E2B6F88D200CD1486 /* Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4208085D2B6F88D200CD1486 /* Variables.swift */; };
+		420808612B6F8A0800CD1486 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420808602B6F8A0800CD1486 /* StringExtension.swift */; };
+		420808642B6F8D4E00CD1486 /* ChatGPTSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 420808632B6F8D4E00CD1486 /* ChatGPTSwift */; };
+		420808662B6F8F2200CD1486 /* BuddyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420808652B6F8F2200CD1486 /* BuddyView.swift */; };
+		420808682B6F915C00CD1486 /* OpenAIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420808672B6F915C00CD1486 /* OpenAIClient.swift */; };
+		4208086A2B6F954C00CD1486 /* GeneratedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420808692B6F954C00CD1486 /* GeneratedView.swift */; };
+		4208086C2B6F9F4D00CD1486 /* ExplainGeneratedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4208086B2B6F9F4D00CD1486 /* ExplainGeneratedView.swift */; };
+		4208086E2B6FA0BE00CD1486 /* PointsGeneratedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4208086D2B6FA0BE00CD1486 /* PointsGeneratedView.swift */; };
+		420808702B6FA91900CD1486 /* SummaryGeneratedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4208086F2B6FA91900CD1486 /* SummaryGeneratedView.swift */; };
+		420808722B6FAD6100CD1486 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420808712B6FAD6100CD1486 /* ErrorView.swift */; };
+		4223CFB22B6F1545009A9A8C /* CheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4223CFB12B6F1545009A9A8C /* CheckView.swift */; };
 		422F64882B6EB2CA004ED988 /* DigiLearnApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422F64872B6EB2CA004ED988 /* DigiLearnApp.swift */; };
 		422F648A2B6EB2CA004ED988 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422F64892B6EB2CA004ED988 /* ContentView.swift */; };
 		422F648C2B6EB2CB004ED988 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 422F648B2B6EB2CB004ED988 /* Assets.xcassets */; };
 		422F648F2B6EB2CB004ED988 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 422F648E2B6EB2CB004ED988 /* Preview Assets.xcassets */; };
+		422F64972B6EE74B004ED988 /* Authenticate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422F64962B6EE74B004ED988 /* Authenticate.swift */; };
+		422F64CC2B6EF482004ED988 /* Mulish-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F649A2B6EF482004ED988 /* Mulish-LightItalic.ttf */; };
+		422F64CD2B6EF482004ED988 /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F649B2B6EF482004ED988 /* Poppins-ExtraLight.ttf */; };
+		422F64CE2B6EF482004ED988 /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F649C2B6EF482004ED988 /* Poppins-ThinItalic.ttf */; };
+		422F64CF2B6EF482004ED988 /* Mulish-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F649D2B6EF482004ED988 /* Mulish-ExtraBoldItalic.ttf */; };
+		422F64D02B6EF482004ED988 /* IBMPlexSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F649E2B6EF482004ED988 /* IBMPlexSans-SemiBoldItalic.ttf */; };
+		422F64D12B6EF482004ED988 /* IBMPlexSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F649F2B6EF482004ED988 /* IBMPlexSans-Medium.ttf */; };
+		422F64D22B6EF482004ED988 /* Mulish-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64A02B6EF482004ED988 /* Mulish-Italic.ttf */; };
+		422F64D32B6EF482004ED988 /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64A12B6EF482004ED988 /* Poppins-ExtraLightItalic.ttf */; };
+		422F64D42B6EF482004ED988 /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64A22B6EF482004ED988 /* Poppins-BoldItalic.ttf */; };
+		422F64D52B6EF482004ED988 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64A32B6EF482004ED988 /* Poppins-Light.ttf */; };
+		422F64D62B6EF482004ED988 /* Mulish-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64A42B6EF482004ED988 /* Mulish-Regular.ttf */; };
+		422F64D72B6EF482004ED988 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64A52B6EF482004ED988 /* Poppins-Medium.ttf */; };
+		422F64D82B6EF482004ED988 /* Mulish-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64A62B6EF482004ED988 /* Mulish-Black.ttf */; };
+		422F64D92B6EF482004ED988 /* Mulish-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64A72B6EF482004ED988 /* Mulish-BlackItalic.ttf */; };
+		422F64DA2B6EF482004ED988 /* Mulish-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64A82B6EF482004ED988 /* Mulish-SemiBoldItalic.ttf */; };
+		422F64DB2B6EF482004ED988 /* Poppins-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64A92B6EF482004ED988 /* Poppins-SemiBoldItalic.ttf */; };
+		422F64DC2B6EF482004ED988 /* Mulish-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64AA2B6EF482004ED988 /* Mulish-ExtraLightItalic.ttf */; };
+		422F64DD2B6EF482004ED988 /* Mulish-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64AB2B6EF482004ED988 /* Mulish-Bold.ttf */; };
+		422F64DE2B6EF482004ED988 /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64AC2B6EF482004ED988 /* Poppins-ExtraBoldItalic.ttf */; };
+		422F64DF2B6EF482004ED988 /* DeliciousHandrawn-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64AD2B6EF482004ED988 /* DeliciousHandrawn-Regular.ttf */; };
+		422F64E02B6EF482004ED988 /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64AE2B6EF482004ED988 /* Poppins-ExtraBold.ttf */; };
+		422F64E12B6EF482004ED988 /* IBMPlexSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64AF2B6EF482004ED988 /* IBMPlexSans-SemiBold.ttf */; };
+		422F64E22B6EF482004ED988 /* Poppins-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64B02B6EF482004ED988 /* Poppins-BlackItalic.ttf */; };
+		422F64E32B6EF482004ED988 /* IBMPlexSans-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64B12B6EF482004ED988 /* IBMPlexSans-MediumItalic.ttf */; };
+		422F64E42B6EF482004ED988 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 422F64B22B6EF482004ED988 /* OFL.txt */; };
+		422F64E52B6EF482004ED988 /* IBMPlexSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64B32B6EF482004ED988 /* IBMPlexSans-LightItalic.ttf */; };
+		422F64E62B6EF482004ED988 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64B42B6EF482004ED988 /* Poppins-Regular.ttf */; };
+		422F64E72B6EF482004ED988 /* IBMPlexSans-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64B52B6EF482004ED988 /* IBMPlexSans-ExtraLight.ttf */; };
+		422F64E82B6EF482004ED988 /* IBMPlexSans-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64B62B6EF482004ED988 /* IBMPlexSans-Thin.ttf */; };
+		422F64E92B6EF482004ED988 /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64B72B6EF482004ED988 /* Poppins-LightItalic.ttf */; };
+		422F64EA2B6EF482004ED988 /* IBMPlexSans-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64B82B6EF482004ED988 /* IBMPlexSans-ThinItalic.ttf */; };
+		422F64EB2B6EF482004ED988 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64B92B6EF482004ED988 /* Poppins-Bold.ttf */; };
+		422F64EC2B6EF482004ED988 /* IBMPlexSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64BA2B6EF482004ED988 /* IBMPlexSans-BoldItalic.ttf */; };
+		422F64ED2B6EF482004ED988 /* Mulish-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64BB2B6EF482004ED988 /* Mulish-Light.ttf */; };
+		422F64EE2B6EF482004ED988 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64BC2B6EF482004ED988 /* Poppins-Black.ttf */; };
+		422F64EF2B6EF482004ED988 /* Mulish-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64BD2B6EF482004ED988 /* Mulish-ExtraBold.ttf */; };
+		422F64F02B6EF482004ED988 /* Mulish-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64BE2B6EF482004ED988 /* Mulish-ExtraLight.ttf */; };
+		422F64F12B6EF482004ED988 /* IBMPlexSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64BF2B6EF482004ED988 /* IBMPlexSans-Light.ttf */; };
+		422F64F22B6EF482004ED988 /* Mulish-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64C02B6EF482004ED988 /* Mulish-Medium.ttf */; };
+		422F64F32B6EF482004ED988 /* IBMPlexSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64C12B6EF482004ED988 /* IBMPlexSans-Italic.ttf */; };
+		422F64F42B6EF482004ED988 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64C22B6EF482004ED988 /* Poppins-Thin.ttf */; };
+		422F64F52B6EF482004ED988 /* Mulish-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64C32B6EF482004ED988 /* Mulish-MediumItalic.ttf */; };
+		422F64F62B6EF482004ED988 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64C42B6EF482004ED988 /* Poppins-SemiBold.ttf */; };
+		422F64F72B6EF482004ED988 /* Mulish-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64C52B6EF482004ED988 /* Mulish-SemiBold.ttf */; };
+		422F64F82B6EF482004ED988 /* IBMPlexSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64C62B6EF482004ED988 /* IBMPlexSans-Regular.ttf */; };
+		422F64F92B6EF482004ED988 /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64C72B6EF482004ED988 /* Poppins-Italic.ttf */; };
+		422F64FA2B6EF482004ED988 /* IBMPlexSans-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64C82B6EF482004ED988 /* IBMPlexSans-ExtraLightItalic.ttf */; };
+		422F64FB2B6EF482004ED988 /* Mulish-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64C92B6EF482004ED988 /* Mulish-BoldItalic.ttf */; };
+		422F64FC2B6EF482004ED988 /* IBMPlexSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64CA2B6EF482004ED988 /* IBMPlexSans-Bold.ttf */; };
+		422F64FD2B6EF482004ED988 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 422F64CB2B6EF482004ED988 /* Poppins-MediumItalic.ttf */; };
+		422F65002B6EF7FC004ED988 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422F64FF2B6EF7FC004ED988 /* NameView.swift */; };
+		422F65022B6EF857004ED988 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422F65012B6EF857004ED988 /* Colors.swift */; };
+		422F65042B6EF896004ED988 /* SuperTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422F65032B6EF896004ED988 /* SuperTextField.swift */; };
+		422F65062B6F0E3A004ED988 /* HelloNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422F65052B6F0E3A004ED988 /* HelloNameView.swift */; };
+		42F6557F2B6F4BB000B34F3B /* GetLessons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F6557E2B6F4BB000B34F3B /* GetLessons.swift */; };
+		42F655812B6F56B300B34F3B /* TopicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F655802B6F56B300B34F3B /* TopicsView.swift */; };
+		42F655832B6F68D800B34F3B /* FetchLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F655822B6F68D800B34F3B /* FetchLesson.swift */; };
+		42F655852B6F691300B34F3B /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F655842B6F691300B34F3B /* Lesson.swift */; };
+		42F655872B6F6FC700B34F3B /* LoadLessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F655862B6F6FC700B34F3B /* LoadLessonView.swift */; };
+		42F6558C2B6F7BD300B34F3B /* LessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F6558B2B6F7BD300B34F3B /* LessonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4208085D2B6F88D200CD1486 /* Variables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variables.swift; sourceTree = "<group>"; };
+		420808602B6F8A0800CD1486 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		420808652B6F8F2200CD1486 /* BuddyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyView.swift; sourceTree = "<group>"; };
+		420808672B6F915C00CD1486 /* OpenAIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIClient.swift; sourceTree = "<group>"; };
+		420808692B6F954C00CD1486 /* GeneratedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedView.swift; sourceTree = "<group>"; };
+		4208086B2B6F9F4D00CD1486 /* ExplainGeneratedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainGeneratedView.swift; sourceTree = "<group>"; };
+		4208086D2B6FA0BE00CD1486 /* PointsGeneratedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsGeneratedView.swift; sourceTree = "<group>"; };
+		4208086F2B6FA91900CD1486 /* SummaryGeneratedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryGeneratedView.swift; sourceTree = "<group>"; };
+		420808712B6FAD6100CD1486 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		4223CFB12B6F1545009A9A8C /* CheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckView.swift; sourceTree = "<group>"; };
 		422F64842B6EB2CA004ED988 /* DigiLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigiLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		422F64872B6EB2CA004ED988 /* DigiLearnApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigiLearnApp.swift; sourceTree = "<group>"; };
 		422F64892B6EB2CA004ED988 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		422F648B2B6EB2CB004ED988 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		422F648E2B6EB2CB004ED988 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		422F64962B6EE74B004ED988 /* Authenticate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticate.swift; sourceTree = "<group>"; };
+		422F64982B6EEEEC004ED988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		422F649A2B6EF482004ED988 /* Mulish-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-LightItalic.ttf"; sourceTree = "<group>"; };
+		422F649B2B6EF482004ED988 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
+		422F649C2B6EF482004ED988 /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
+		422F649D2B6EF482004ED988 /* Mulish-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		422F649E2B6EF482004ED988 /* IBMPlexSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		422F649F2B6EF482004ED988 /* IBMPlexSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-Medium.ttf"; sourceTree = "<group>"; };
+		422F64A02B6EF482004ED988 /* Mulish-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-Italic.ttf"; sourceTree = "<group>"; };
+		422F64A12B6EF482004ED988 /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		422F64A22B6EF482004ED988 /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BoldItalic.ttf"; sourceTree = "<group>"; };
+		422F64A32B6EF482004ED988 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		422F64A42B6EF482004ED988 /* Mulish-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-Regular.ttf"; sourceTree = "<group>"; };
+		422F64A52B6EF482004ED988 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		422F64A62B6EF482004ED988 /* Mulish-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-Black.ttf"; sourceTree = "<group>"; };
+		422F64A72B6EF482004ED988 /* Mulish-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-BlackItalic.ttf"; sourceTree = "<group>"; };
+		422F64A82B6EF482004ED988 /* Mulish-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		422F64A92B6EF482004ED988 /* Poppins-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		422F64AA2B6EF482004ED988 /* Mulish-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		422F64AB2B6EF482004ED988 /* Mulish-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-Bold.ttf"; sourceTree = "<group>"; };
+		422F64AC2B6EF482004ED988 /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		422F64AD2B6EF482004ED988 /* DeliciousHandrawn-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DeliciousHandrawn-Regular.ttf"; sourceTree = "<group>"; };
+		422F64AE2B6EF482004ED988 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
+		422F64AF2B6EF482004ED988 /* IBMPlexSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		422F64B02B6EF482004ED988 /* Poppins-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BlackItalic.ttf"; sourceTree = "<group>"; };
+		422F64B12B6EF482004ED988 /* IBMPlexSans-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-MediumItalic.ttf"; sourceTree = "<group>"; };
+		422F64B22B6EF482004ED988 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		422F64B32B6EF482004ED988 /* IBMPlexSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		422F64B42B6EF482004ED988 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		422F64B52B6EF482004ED988 /* IBMPlexSans-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-ExtraLight.ttf"; sourceTree = "<group>"; };
+		422F64B62B6EF482004ED988 /* IBMPlexSans-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-Thin.ttf"; sourceTree = "<group>"; };
+		422F64B72B6EF482004ED988 /* Poppins-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-LightItalic.ttf"; sourceTree = "<group>"; };
+		422F64B82B6EF482004ED988 /* IBMPlexSans-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-ThinItalic.ttf"; sourceTree = "<group>"; };
+		422F64B92B6EF482004ED988 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		422F64BA2B6EF482004ED988 /* IBMPlexSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		422F64BB2B6EF482004ED988 /* Mulish-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-Light.ttf"; sourceTree = "<group>"; };
+		422F64BC2B6EF482004ED988 /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
+		422F64BD2B6EF482004ED988 /* Mulish-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-ExtraBold.ttf"; sourceTree = "<group>"; };
+		422F64BE2B6EF482004ED988 /* Mulish-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-ExtraLight.ttf"; sourceTree = "<group>"; };
+		422F64BF2B6EF482004ED988 /* IBMPlexSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-Light.ttf"; sourceTree = "<group>"; };
+		422F64C02B6EF482004ED988 /* Mulish-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-Medium.ttf"; sourceTree = "<group>"; };
+		422F64C12B6EF482004ED988 /* IBMPlexSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-Italic.ttf"; sourceTree = "<group>"; };
+		422F64C22B6EF482004ED988 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.ttf"; sourceTree = "<group>"; };
+		422F64C32B6EF482004ED988 /* Mulish-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-MediumItalic.ttf"; sourceTree = "<group>"; };
+		422F64C42B6EF482004ED988 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		422F64C52B6EF482004ED988 /* Mulish-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-SemiBold.ttf"; sourceTree = "<group>"; };
+		422F64C62B6EF482004ED988 /* IBMPlexSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-Regular.ttf"; sourceTree = "<group>"; };
+		422F64C72B6EF482004ED988 /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
+		422F64C82B6EF482004ED988 /* IBMPlexSans-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		422F64C92B6EF482004ED988 /* Mulish-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-BoldItalic.ttf"; sourceTree = "<group>"; };
+		422F64CA2B6EF482004ED988 /* IBMPlexSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-Bold.ttf"; sourceTree = "<group>"; };
+		422F64CB2B6EF482004ED988 /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
+		422F64FF2B6EF7FC004ED988 /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
+		422F65012B6EF857004ED988 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		422F65032B6EF896004ED988 /* SuperTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperTextField.swift; sourceTree = "<group>"; };
+		422F65052B6F0E3A004ED988 /* HelloNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloNameView.swift; sourceTree = "<group>"; };
+		42F6557E2B6F4BB000B34F3B /* GetLessons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLessons.swift; sourceTree = "<group>"; };
+		42F655802B6F56B300B34F3B /* TopicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsView.swift; sourceTree = "<group>"; };
+		42F655822B6F68D800B34F3B /* FetchLesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchLesson.swift; sourceTree = "<group>"; };
+		42F655842B6F691300B34F3B /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
+		42F655862B6F6FC700B34F3B /* LoadLessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadLessonView.swift; sourceTree = "<group>"; };
+		42F6558B2B6F7BD300B34F3B /* LessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,12 +170,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				420808642B6F8D4E00CD1486 /* ChatGPTSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4208085F2B6F89E400CD1486 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				420808602B6F8A0800CD1486 /* StringExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		422F647B2B6EB2CA004ED988 = {
 			isa = PBXGroup;
 			children = (
@@ -51,10 +204,17 @@
 		422F64862B6EB2CA004ED988 /* DigiLearn */ = {
 			isa = PBXGroup;
 			children = (
+				4208085F2B6F89E400CD1486 /* Extensions */,
+				422F64FE2B6EF7E4004ED988 /* Views */,
+				422F64992B6EF482004ED988 /* Fonts */,
+				422F64982B6EEEEC004ED988 /* Info.plist */,
+				422F64952B6EE737004ED988 /* API Client */,
 				422F64872B6EB2CA004ED988 /* DigiLearnApp.swift */,
 				422F64892B6EB2CA004ED988 /* ContentView.swift */,
 				422F648B2B6EB2CB004ED988 /* Assets.xcassets */,
 				422F648D2B6EB2CB004ED988 /* Preview Content */,
+				42F655842B6F691300B34F3B /* Lesson.swift */,
+				4208085D2B6F88D200CD1486 /* Variables.swift */,
 			);
 			path = DigiLearn;
 			sourceTree = "<group>";
@@ -65,6 +225,95 @@
 				422F648E2B6EB2CB004ED988 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		422F64952B6EE737004ED988 /* API Client */ = {
+			isa = PBXGroup;
+			children = (
+				422F64962B6EE74B004ED988 /* Authenticate.swift */,
+				42F655822B6F68D800B34F3B /* FetchLesson.swift */,
+				42F6557E2B6F4BB000B34F3B /* GetLessons.swift */,
+				420808672B6F915C00CD1486 /* OpenAIClient.swift */,
+			);
+			path = "API Client";
+			sourceTree = "<group>";
+		};
+		422F64992B6EF482004ED988 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				422F649A2B6EF482004ED988 /* Mulish-LightItalic.ttf */,
+				422F649B2B6EF482004ED988 /* Poppins-ExtraLight.ttf */,
+				422F649C2B6EF482004ED988 /* Poppins-ThinItalic.ttf */,
+				422F649D2B6EF482004ED988 /* Mulish-ExtraBoldItalic.ttf */,
+				422F649E2B6EF482004ED988 /* IBMPlexSans-SemiBoldItalic.ttf */,
+				422F649F2B6EF482004ED988 /* IBMPlexSans-Medium.ttf */,
+				422F64A02B6EF482004ED988 /* Mulish-Italic.ttf */,
+				422F64A12B6EF482004ED988 /* Poppins-ExtraLightItalic.ttf */,
+				422F64A22B6EF482004ED988 /* Poppins-BoldItalic.ttf */,
+				422F64A32B6EF482004ED988 /* Poppins-Light.ttf */,
+				422F64A42B6EF482004ED988 /* Mulish-Regular.ttf */,
+				422F64A52B6EF482004ED988 /* Poppins-Medium.ttf */,
+				422F64A62B6EF482004ED988 /* Mulish-Black.ttf */,
+				422F64A72B6EF482004ED988 /* Mulish-BlackItalic.ttf */,
+				422F64A82B6EF482004ED988 /* Mulish-SemiBoldItalic.ttf */,
+				422F64A92B6EF482004ED988 /* Poppins-SemiBoldItalic.ttf */,
+				422F64AA2B6EF482004ED988 /* Mulish-ExtraLightItalic.ttf */,
+				422F64AB2B6EF482004ED988 /* Mulish-Bold.ttf */,
+				422F64AC2B6EF482004ED988 /* Poppins-ExtraBoldItalic.ttf */,
+				422F64AD2B6EF482004ED988 /* DeliciousHandrawn-Regular.ttf */,
+				422F64AE2B6EF482004ED988 /* Poppins-ExtraBold.ttf */,
+				422F64AF2B6EF482004ED988 /* IBMPlexSans-SemiBold.ttf */,
+				422F64B02B6EF482004ED988 /* Poppins-BlackItalic.ttf */,
+				422F64B12B6EF482004ED988 /* IBMPlexSans-MediumItalic.ttf */,
+				422F64B22B6EF482004ED988 /* OFL.txt */,
+				422F64B32B6EF482004ED988 /* IBMPlexSans-LightItalic.ttf */,
+				422F64B42B6EF482004ED988 /* Poppins-Regular.ttf */,
+				422F64B52B6EF482004ED988 /* IBMPlexSans-ExtraLight.ttf */,
+				422F64B62B6EF482004ED988 /* IBMPlexSans-Thin.ttf */,
+				422F64B72B6EF482004ED988 /* Poppins-LightItalic.ttf */,
+				422F64B82B6EF482004ED988 /* IBMPlexSans-ThinItalic.ttf */,
+				422F64B92B6EF482004ED988 /* Poppins-Bold.ttf */,
+				422F64BA2B6EF482004ED988 /* IBMPlexSans-BoldItalic.ttf */,
+				422F64BB2B6EF482004ED988 /* Mulish-Light.ttf */,
+				422F64BC2B6EF482004ED988 /* Poppins-Black.ttf */,
+				422F64BD2B6EF482004ED988 /* Mulish-ExtraBold.ttf */,
+				422F64BE2B6EF482004ED988 /* Mulish-ExtraLight.ttf */,
+				422F64BF2B6EF482004ED988 /* IBMPlexSans-Light.ttf */,
+				422F64C02B6EF482004ED988 /* Mulish-Medium.ttf */,
+				422F64C12B6EF482004ED988 /* IBMPlexSans-Italic.ttf */,
+				422F64C22B6EF482004ED988 /* Poppins-Thin.ttf */,
+				422F64C32B6EF482004ED988 /* Mulish-MediumItalic.ttf */,
+				422F64C42B6EF482004ED988 /* Poppins-SemiBold.ttf */,
+				422F64C52B6EF482004ED988 /* Mulish-SemiBold.ttf */,
+				422F64C62B6EF482004ED988 /* IBMPlexSans-Regular.ttf */,
+				422F64C72B6EF482004ED988 /* Poppins-Italic.ttf */,
+				422F64C82B6EF482004ED988 /* IBMPlexSans-ExtraLightItalic.ttf */,
+				422F64C92B6EF482004ED988 /* Mulish-BoldItalic.ttf */,
+				422F64CA2B6EF482004ED988 /* IBMPlexSans-Bold.ttf */,
+				422F64CB2B6EF482004ED988 /* Poppins-MediumItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = SOURCE_ROOT;
+		};
+		422F64FE2B6EF7E4004ED988 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				422F64FF2B6EF7FC004ED988 /* NameView.swift */,
+				4223CFB12B6F1545009A9A8C /* CheckView.swift */,
+				422F65012B6EF857004ED988 /* Colors.swift */,
+				422F65032B6EF896004ED988 /* SuperTextField.swift */,
+				420808712B6FAD6100CD1486 /* ErrorView.swift */,
+				422F65052B6F0E3A004ED988 /* HelloNameView.swift */,
+				420808692B6F954C00CD1486 /* GeneratedView.swift */,
+				42F655802B6F56B300B34F3B /* TopicsView.swift */,
+				4208086D2B6FA0BE00CD1486 /* PointsGeneratedView.swift */,
+				4208086F2B6FA91900CD1486 /* SummaryGeneratedView.swift */,
+				4208086B2B6F9F4D00CD1486 /* ExplainGeneratedView.swift */,
+				420808652B6F8F2200CD1486 /* BuddyView.swift */,
+				42F655862B6F6FC700B34F3B /* LoadLessonView.swift */,
+				42F6558B2B6F7BD300B34F3B /* LessonView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +332,9 @@
 			dependencies = (
 			);
 			name = DigiLearn;
+			packageProductDependencies = (
+				420808632B6F8D4E00CD1486 /* ChatGPTSwift */,
+			);
 			productName = DigiLearn;
 			productReference = 422F64842B6EB2CA004ED988 /* DigiLearn.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +363,9 @@
 				Base,
 			);
 			mainGroup = 422F647B2B6EB2CA004ED988;
+			packageReferences = (
+				420808622B6F8D4E00CD1486 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */,
+			);
 			productRefGroup = 422F64852B6EB2CA004ED988 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,8 +380,58 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				422F64E82B6EF482004ED988 /* IBMPlexSans-Thin.ttf in Resources */,
+				422F64D22B6EF482004ED988 /* Mulish-Italic.ttf in Resources */,
+				422F64D72B6EF482004ED988 /* Poppins-Medium.ttf in Resources */,
+				422F64F82B6EF482004ED988 /* IBMPlexSans-Regular.ttf in Resources */,
+				422F64EA2B6EF482004ED988 /* IBMPlexSans-ThinItalic.ttf in Resources */,
+				422F64DA2B6EF482004ED988 /* Mulish-SemiBoldItalic.ttf in Resources */,
+				422F64DE2B6EF482004ED988 /* Poppins-ExtraBoldItalic.ttf in Resources */,
+				422F64DD2B6EF482004ED988 /* Mulish-Bold.ttf in Resources */,
+				422F64ED2B6EF482004ED988 /* Mulish-Light.ttf in Resources */,
+				422F64FB2B6EF482004ED988 /* Mulish-BoldItalic.ttf in Resources */,
+				422F64E62B6EF482004ED988 /* Poppins-Regular.ttf in Resources */,
+				422F64F52B6EF482004ED988 /* Mulish-MediumItalic.ttf in Resources */,
+				422F64CD2B6EF482004ED988 /* Poppins-ExtraLight.ttf in Resources */,
+				422F64F42B6EF482004ED988 /* Poppins-Thin.ttf in Resources */,
+				422F64DF2B6EF482004ED988 /* DeliciousHandrawn-Regular.ttf in Resources */,
+				422F64D32B6EF482004ED988 /* Poppins-ExtraLightItalic.ttf in Resources */,
+				422F64DB2B6EF482004ED988 /* Poppins-SemiBoldItalic.ttf in Resources */,
+				422F64F62B6EF482004ED988 /* Poppins-SemiBold.ttf in Resources */,
+				422F64F22B6EF482004ED988 /* Mulish-Medium.ttf in Resources */,
+				422F64D92B6EF482004ED988 /* Mulish-BlackItalic.ttf in Resources */,
+				422F64CC2B6EF482004ED988 /* Mulish-LightItalic.ttf in Resources */,
+				422F64CF2B6EF482004ED988 /* Mulish-ExtraBoldItalic.ttf in Resources */,
+				422F64EF2B6EF482004ED988 /* Mulish-ExtraBold.ttf in Resources */,
+				422F64E42B6EF482004ED988 /* OFL.txt in Resources */,
+				422F64EE2B6EF482004ED988 /* Poppins-Black.ttf in Resources */,
+				422F64CE2B6EF482004ED988 /* Poppins-ThinItalic.ttf in Resources */,
+				422F64FC2B6EF482004ED988 /* IBMPlexSans-Bold.ttf in Resources */,
+				422F64F12B6EF482004ED988 /* IBMPlexSans-Light.ttf in Resources */,
+				422F64D82B6EF482004ED988 /* Mulish-Black.ttf in Resources */,
+				422F64D02B6EF482004ED988 /* IBMPlexSans-SemiBoldItalic.ttf in Resources */,
+				422F64E52B6EF482004ED988 /* IBMPlexSans-LightItalic.ttf in Resources */,
+				422F64D52B6EF482004ED988 /* Poppins-Light.ttf in Resources */,
 				422F648F2B6EB2CB004ED988 /* Preview Assets.xcassets in Resources */,
+				422F64FA2B6EF482004ED988 /* IBMPlexSans-ExtraLightItalic.ttf in Resources */,
+				422F64F32B6EF482004ED988 /* IBMPlexSans-Italic.ttf in Resources */,
+				422F64E22B6EF482004ED988 /* Poppins-BlackItalic.ttf in Resources */,
+				422F64E72B6EF482004ED988 /* IBMPlexSans-ExtraLight.ttf in Resources */,
+				422F64F72B6EF482004ED988 /* Mulish-SemiBold.ttf in Resources */,
+				422F64E92B6EF482004ED988 /* Poppins-LightItalic.ttf in Resources */,
+				422F64E32B6EF482004ED988 /* IBMPlexSans-MediumItalic.ttf in Resources */,
+				422F64D42B6EF482004ED988 /* Poppins-BoldItalic.ttf in Resources */,
+				422F64FD2B6EF482004ED988 /* Poppins-MediumItalic.ttf in Resources */,
+				422F64D12B6EF482004ED988 /* IBMPlexSans-Medium.ttf in Resources */,
 				422F648C2B6EB2CB004ED988 /* Assets.xcassets in Resources */,
+				422F64EB2B6EF482004ED988 /* Poppins-Bold.ttf in Resources */,
+				422F64F02B6EF482004ED988 /* Mulish-ExtraLight.ttf in Resources */,
+				422F64F92B6EF482004ED988 /* Poppins-Italic.ttf in Resources */,
+				422F64D62B6EF482004ED988 /* Mulish-Regular.ttf in Resources */,
+				422F64DC2B6EF482004ED988 /* Mulish-ExtraLightItalic.ttf in Resources */,
+				422F64EC2B6EF482004ED988 /* IBMPlexSans-BoldItalic.ttf in Resources */,
+				422F64E12B6EF482004ED988 /* IBMPlexSans-SemiBold.ttf in Resources */,
+				422F64E02B6EF482004ED988 /* Poppins-ExtraBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +443,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				422F648A2B6EB2CA004ED988 /* ContentView.swift in Sources */,
+				422F65022B6EF857004ED988 /* Colors.swift in Sources */,
+				422F65002B6EF7FC004ED988 /* NameView.swift in Sources */,
+				420808662B6F8F2200CD1486 /* BuddyView.swift in Sources */,
+				42F655852B6F691300B34F3B /* Lesson.swift in Sources */,
+				4208086E2B6FA0BE00CD1486 /* PointsGeneratedView.swift in Sources */,
+				420808612B6F8A0800CD1486 /* StringExtension.swift in Sources */,
+				4208086A2B6F954C00CD1486 /* GeneratedView.swift in Sources */,
+				420808722B6FAD6100CD1486 /* ErrorView.swift in Sources */,
+				42F655872B6F6FC700B34F3B /* LoadLessonView.swift in Sources */,
+				4223CFB22B6F1545009A9A8C /* CheckView.swift in Sources */,
+				420808682B6F915C00CD1486 /* OpenAIClient.swift in Sources */,
+				420808702B6FA91900CD1486 /* SummaryGeneratedView.swift in Sources */,
+				422F65042B6EF896004ED988 /* SuperTextField.swift in Sources */,
+				42F6557F2B6F4BB000B34F3B /* GetLessons.swift in Sources */,
+				4208086C2B6F9F4D00CD1486 /* ExplainGeneratedView.swift in Sources */,
+				422F65062B6F0E3A004ED988 /* HelloNameView.swift in Sources */,
+				4208085E2B6F88D200CD1486 /* Variables.swift in Sources */,
+				42F655832B6F68D800B34F3B /* FetchLesson.swift in Sources */,
 				422F64882B6EB2CA004ED988 /* DigiLearnApp.swift in Sources */,
+				42F655812B6F56B300B34F3B /* TopicsView.swift in Sources */,
+				422F64972B6EE74B004ED988 /* Authenticate.swift in Sources */,
+				42F6558C2B6F7BD300B34F3B /* LessonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +601,7 @@
 				DEVELOPMENT_TEAM = UZ9ZFSMW8M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DigiLearn/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -305,6 +632,7 @@
 				DEVELOPMENT_TEAM = UZ9ZFSMW8M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DigiLearn/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -346,6 +674,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		420808622B6F8D4E00CD1486 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alfianlosari/ChatGPTSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		420808632B6F8D4E00CD1486 /* ChatGPTSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 420808622B6F8D4E00CD1486 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */;
+			productName = ChatGPTSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 422F647C2B6EB2CA004ED988 /* Project object */;
 }

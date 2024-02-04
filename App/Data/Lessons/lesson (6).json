@@ -1,0 +1,4 @@
+{
+  "title": "Calculator.py",
+  "body": "Create a Python program called \"Calculator.py\" that performs basic arithmetic calculations on two given numbers. Ask the user to input two numbers, and then ask for their preferred operation: addition, subtraction, multiplication, or division. Implement these operations using appropriate Python operators and display the result to the user. Also, include error handling to prevent division by zero. Finally, add appropriate comments to the code explaining the purpose of each section. Test the program with various inputs to ensure accuracy."
+}

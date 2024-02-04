@@ -15,7 +15,7 @@ struct CheckView: View {
       if authenticate(name: name) {
         HelloNameView(name: name)
       } else {
-        NameView()
+        ErrorView()
       }
     }
 }

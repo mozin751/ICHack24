@@ -1,16 +1,16 @@
 //
-//  SwiftUIView.swift
+//  GeneratedView.swift
 //  DigiLearn
 //
 //  Created by Muhammad Mohsin on 04/02/24.
 //
 
-import Foundation
 import SwiftUI
 
-struct LessonView: View {
+struct GeneratedView: View {
   var title: String
   @State var text: String
+  var save_text: String
   
     var body: some View {
       GeometryReader { geometry in
@@ -19,9 +19,6 @@ struct LessonView: View {
             .resizable()
             .aspectRatio(geometry.size, contentMode: .fill)
             .edgesIgnoringSafeArea(.all)
-            .onAppear {
-              selectedText = text
-            }
           VStack {
             VStack {
               Text(title)
@@ -45,7 +42,7 @@ struct LessonView: View {
                   
                   HStack{
                     Button(action: {}) {
-                      NavigationLink(destination: TopicsView(topics: allLessons)) {
+                      NavigationLink(destination: BuddyView(title: title, text: save_text)) {
                         Text("Back")
                           .font(.custom("Poppins-Bold", size: 14))
                           .foregroundColor(.white)
@@ -60,24 +57,7 @@ struct LessonView: View {
                       .cornerRadius(28.5)
                       .shadow(color: neonBlue2.opacity(0.7), radius: 10, x: 0, y: 15)
                     }
-                    
-                    Button(action: {}) {
-                      NavigationLink(destination: BuddyView(title: title, text: text)) {
-                        Text("Call Buddy")
-                          .font(.custom("Poppins-Bold", size: 14))
-                          .foregroundColor(.white)
-                          .padding()
-                      }
-                      .navigationViewStyle(StackNavigationViewStyle())
-                      .foregroundColor(.white)
-                      .frame(width: 139 / dev.width * geometry2.width, height: 40 / dev.height * geometry2.height)
-                      .background(
-                        LinearGradient(gradient: Gradient(colors: [neonBlue2, neonBlue1]), startPoint: .leading, endPoint: .trailing)
-                      )
-                      .cornerRadius(28.5)
-                      .shadow(color: neonBlue2.opacity(0.7), radius: 10, x: 0, y: 15)
-                    }
-                   }
+                  }
                 }
                 .offset(x:0, y: geometry2.height * 0.01)
               }
@@ -90,44 +70,5 @@ struct LessonView: View {
       .navigationBarHidden(true)
       .edgesIgnoringSafeArea(.all)
       .navigationBarBackButtonHidden(true)
-    }
-}
-
-struct UITextViewRepresentable: UIViewRepresentable {
-    let textView = UITextView()
-    @Binding var text: String
-    
-    func makeUIView(context: Context) -> UITextView {
-        textView.delegate = context.coordinator
-      textView.isEditable = false
-        return textView
-    }
-    
-    func updateUIView(_ uiView: UITextView, context: Context) {
-        // SwiftUI -> UIKit
-        uiView.text = text
-    }
-    
-    func makeCoordinator() -> Coordinator {
-        Coordinator(text: $text)
-    }
-    
-    class Coordinator: NSObject, UITextViewDelegate {
-        @Binding var text: String
-        
-        init(text: Binding<String>) {
-            self._text = text
-        }
-        
-        func textViewDidChange(_ textView: UITextView) {
-            // UIKit -> SwiftUI
-            _text.wrappedValue = textView.text
-        }
-        
-        func textViewDidChangeSelection(_ textView: UITextView) {
-            // Fires off every time the user changes the selection.
-          let range = textView.selectedRange
-          selectedText = String(text[range])
-        }
     }
 }

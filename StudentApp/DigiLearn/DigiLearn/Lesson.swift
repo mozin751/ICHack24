@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct Lesson: Decodable {
+  let title: String
+  var body: String
+}

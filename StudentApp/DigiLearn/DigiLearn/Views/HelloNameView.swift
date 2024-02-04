@@ -10,6 +10,8 @@ import SwiftUI
 struct HelloNameView: View {
   @State private var isActive = false
   @State var name: String
+  @State var lessons:[String]? = nil
+  @State private var gotLessons = false
   
   var body: some View {
     GeometryReader { geometry in
@@ -29,14 +31,15 @@ struct HelloNameView: View {
         LinearGradient(gradient: Gradient(colors: [neonBlue2, neonBlue1]), startPoint: .top, endPoint: .bottom)
       )
       .onAppear {
-        getLessons()
+        lessons = getLessons()
+        allLessons = lessons
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
           isActive = true
         }
       }
       .navigationBarHidden(true)
       .background(
-        NavigationLink(destination: ContentView(), isActive: $isActive) {
+        NavigationLink(destination: TopicsView(topics: lessons), isActive: $isActive) {
         }
       )
     }
