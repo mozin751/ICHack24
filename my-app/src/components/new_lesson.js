@@ -11,11 +11,17 @@ function NewLesson({ setPage }) {
     setOptionSelected(value);
   };
 
-  const openai = new OpenAI({apiKey : "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", dangerouslyAllowBrowser: true});
+  const openai = new OpenAI({
+    apiKey: "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",
+    dangerouslyAllowBrowser: true,
+  });
 
   async function Helper(c) {
     try {
-      let prompt = "I have access to FPGA boards which my students can use to represent binary numbers using switches on the FPGA. Using the FPGA, in under 100 words create a lesson plan with this title: " + c +"\n Do not reiterate the name of the title to me again."
+      let prompt =
+        "I have access to FPGA boards which my students can use to represent binary numbers using switches on the FPGA. Using the FPGA, in under 100 words create a lesson plan with this title: " +
+        c +
+        "\n Do not reiterate the name of the title to me again.";
       const stream = await openai.chat.completions.create({
         model: "gpt-3.5-turbo",
         messages: [{ role: "user", content: prompt }],
@@ -28,12 +34,10 @@ function NewLesson({ setPage }) {
       }
       console.log("Data is:" + data);
       return data;
-    }
-    catch {
+    } catch {
       console.log("Error");
     }
-}
-
+  }
 
   // async function main(c) {
   //   const stream = await openai.chat.completions.create({
@@ -49,22 +53,21 @@ function NewLesson({ setPage }) {
   // }
 
   async function main(c) {
-  try {
-    const result = await Helper(c);
-    return result
-    // Further processing with the result
-  } catch (error) {
-    console.error("Error:", error);
+    try {
+      const result = await Helper(c);
+      return result;
+      // Further processing with the result
+    } catch (error) {
+      console.error("Error:", error);
+    }
   }
-}
-
 
   async function generatePrompt() {
     // Call the main function with the title and update the body
-    setBody("Generating...")
+    setBody("Generating...");
     const result = await main(title);
     setBody(result);
-  };
+  }
 
   const handleSubmit = () => {
     const lessonData = { title, body };
@@ -72,9 +75,13 @@ function NewLesson({ setPage }) {
       type: "application/json",
     });
     const href = URL.createObjectURL(blob);
+
+    // Replace spaces with underscores in the title for the filename
+    const fileName = `${title.replace(/ /g, "_")}.json`;
+
     const link = document.createElement("a");
     link.href = href;
-    link.download = "lesson.json"; // This will suggest saving the file as "lesson.json"
+    link.download = fileName; // Use the modified title as the file name
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
