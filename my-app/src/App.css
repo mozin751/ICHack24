@@ -1,9 +1,16 @@
+:root {
+  --dark-blue : rgb(3,57,103);
+  --less-dark-blue : rgba(3,57,103,1);
+}
 /* General App styling */
 .App {
   text-align: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
   padding: 20px;
+}
+h2 {
+  text-decoration: underline;;
 }
 
 /* Table Styling */
@@ -21,7 +28,7 @@ td {
 }
 
 th {
-  background-color: #4caf50;
+  background-color: var(--dark-blue);
   color: white;
 }
 
@@ -35,14 +42,14 @@ tr:hover {
   padding: 10px 20px;
   font-size: 16px;
   color: white;
-  background-color: #4caf50;
+  background-color: var(--dark-blue);
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .createLessonBtn:hover {
-  background-color: #45a049;
+  background-color: var(--less-dark-blue);
 }
 
 /* Responsive Design */
@@ -67,7 +74,7 @@ main{
   padding: 20px;
 }
 .sidebar{
-  background: #000;
+  background: var(--dark-blue);
   color: #fff;
   height: 100vh;
   width: 200px;
@@ -93,13 +100,8 @@ main{
   gap: 15px;
   transition: all 0.5s;
 }
-.link:hover{
-  background:lightskyblue;
-  color: #000;
-  transition: all 0.5s;
-}
 .active{
-  background: lightskyblue;
+  background: #4594bc;
   color: #000;
 }
 .icon, .link_text{
@@ -238,7 +240,7 @@ bottom: 0;
 left: 50%;
 z-index: 2;
 transform: translate(-50%, 50%);
-background: #8f6ed5 url("https://image.freepik.com/free-photo/friendly-brunette-looking-camera_23-2147774849.jpg") center center no-repeat;
+background: #8f6ed5 url('./rohan.png') center center no-repeat;
 background-size: cover;
 border-radius: 50%;
 box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07);
@@ -755,4 +757,89 @@ transform: rotate(0deg) translate(-10px) rotate(0deg);
 -webkit-transform: rotate(360deg) translate(-10px) rotate(-360deg);
 transform: rotate(360deg) translate(-10px) rotate(-360deg);
 }
+}
+
+.NewLesson {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.form-group {
+  margin-bottom: 20px;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+.text-input,
+.textarea-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.textarea-input {
+  height: 150px;
+}
+.button-group button {
+  margin-top:30px;
+  padding: 10px 37px;
+  font-size: 16px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.button-group button:hover {
+  background-color: #0056b3;
+}
+.checkbox-container {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 5vh; /* Optionally, adjust the height as needed */
+}
+
+.checkbox-label {
+position: relative;
+cursor: pointer;
+font-size: 16px;
+display: flex;
+align-items: center;
+}
+
+/* Hide default checkbox */
+.checkbox-label input {
+opacity: 0;
+}
+
+.checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 18px;
+width: 18px;
+background-color: #fff;
+border: 2px solid #007bff; /* Change to your preferred color */
+border-radius: 3px;
+}
+
+/* Checked state style */
+.checkbox-label input:checked + .checkmark:after {
+content: '';
+display: block;
+width: 10px;
+height: 4px;
+border: solid #007bff; /* Change to your preferred color */
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
 }
