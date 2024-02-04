@@ -1,34 +1,20 @@
-import { React, useState } from "react";
-import NewLesson from "./new_lesson";
+import { useState, useEffect } from 'react';
+
 const Dashboard = () => {
-  const [page, setPage] = useState("home"); // Added to manage page state
-  const students = [
-    {
-      id: "1",
-      name: "Rohan Shah",
-      lessonsCompleted: 15,
-      testsCompleted: 5,
-    },
-    {
-      id: "2",
-      name: "Aaryan Purohit",
-      lessonsCompleted: 9,
-      testsCompleted: 1,
-    },
-    {
-      id: "0101104",
-      name: "Thalaiyur Mohammad Rayees Muhamad Mohsin",
-      lessonsCompleted: 3,
-      testsCompleted: 5,
-    },
-  ];
-
-  if (page === "newLesson") {
-    return <NewLesson setPage={setPage} />;
-  }
-
+  const [students, setStudents] = useState([]);
+  var cnt = 1;
+  useEffect(() => {
+    fetch('http://146.169.140.182/all_students/')
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data.students);
+        setStudents(data.students);
+      });
+  }, []);
   return (
-    <div className="App">
+<div className="App">
       <table>
         <thead>
           <tr>
@@ -40,20 +26,16 @@ const Dashboard = () => {
         </thead>
         <tbody>
           {students.map((student) => (
-            <tr key={student.id}>
-              <td>{student.id}</td>
-              <td>{student.name}</td>
-              <td>{student.lessonsCompleted}</td>
-              <td>{student.testsCompleted}</td>
+            <tr key={student}>
+              <td> {cnt++}</td>
+              <td>{student[0]}</td>
+              <td>{student[1]}</td>
+              <td>{student[2]}</td>
             </tr>
           ))}
         </tbody>
       </table>
-      <button className="createLessonBtn" onClick={() => setPage("newLesson")}>
-        Create Lesson
-      </button>
     </div>
   );
 };
-
 export default Dashboard;
