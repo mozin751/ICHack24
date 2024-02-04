@@ -119,6 +119,95 @@ function NewLesson({ setPage }) {
         <button onClick={generatePrompt}>Generate a Lesson!</button>
         <button onClick={handleSubmit}>Submit Lesson</button>
       </div>
+      <style jsx>{`
+        .NewLesson {
+          max-width: 600px;
+          margin: 20px auto;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+          margin-bottom: 20px;
+        }
+        label {
+          display: block;
+          margin-bottom: 5px;
+        }
+        .text-input,
+        .textarea-input {
+          width: 100%;
+          padding: 8px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          margin-bottom: 10px;
+        }
+        .textarea-input {
+          height: 150px;
+        }
+        .button-group button {
+          margin-top: 30px;
+          padding: 10px 37px;
+          font-size: 16px;
+          color: white;
+          background-color: #007bff;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          margin-right: 10px;
+        }
+        .button-group button:hover {
+          background-color: #0056b3;
+        }
+        .checkbox-container {
+          display: flex;
+          align-items: center;
+        }
+        .checkbox-label {
+          cursor: pointer;
+          position: relative;
+          padding-left: 35px;
+        }
+        .checkbox-input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0;
+        }
+        .checkmark {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 20px;
+          width: 20px;
+          background-color: #eee;
+          border-radius: 50%;
+        }
+        .checkbox-label:hover input ~ .checkmark {
+          background-color: #ccc;
+        }
+        .checkbox-label input:checked ~ .checkmark {
+          background-color: #007bff;
+        }
+        .checkmark:after {
+          content: "";
+          position: absolute;
+          display: none;
+        }
+        .checkbox-label input:checked ~ .checkmark:after {
+          display: block;
+        }
+        .checkbox-label .checkmark:after {
+          left: 7px;
+          top: 3px;
+          width: 5px;
+          height: 10px;
+          border: solid white;
+          border-width: 0 3px 3px 0;
+          transform: rotate(45deg);
+        }
+      `}</style>
     </div>
   );
 }
